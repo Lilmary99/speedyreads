@@ -76,8 +76,18 @@ class ExHandler(webapp2.RequestHandler):
         pageFinal = pageTemp.render(pageDict)
         return pageFinal
 
+class SpeedHandler(webapp2.RequestHandler):
+    def get(self):
+        page = excerptPages[int(self.request.get('id'))]
+        pageDict = page.toDictionary()
+        pageTemp = env.get_template("templateForSpeed.html")
+        pageFinal = pageTemp.render(pageDict)
+        self.response.out.write(pageFinal)
+
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/view-section', SectionHandler),
-    ('/view-excerpt', ExHandler)
+    ('/view-excerpt', ExHandler),
+    ('/get-speed', SpeedHandler)
 ], debug=True)
