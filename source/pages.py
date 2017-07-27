@@ -15,7 +15,9 @@ class Page:
 art1sections = { 1 : open("template/satPrep1readingSection1.html").read(),
                  2 : open("template/satPrep1readingSection2.html").read(),
                  3 : open("template/satPrep1readingSection3.html").read(),
-                 4 : open("template/satPrep1endPage.html")
+                 4 : open("template/satPrep1endPage.html").read(),
+                 5 : open("template/leisureContent.html").read(),
+                 6 : open("template/speedCheckContent.html").read()
 }
 
 home = Page(0, "Home",  open("template/id0content.html").read(), [])
@@ -23,6 +25,8 @@ page1 = Page(1, "Basic Read Mode", open("template/id1content.html").read(), [])
 page2 = Page(2, "Categories", open("template/categoryHomeContent.html").read(), [])
 page3 = Page(3, "Challenges", open("template/challengeHomeContent.html").read(), [])
 art1 = Page(1, "SAT Prep 1", art1sections[1] , 1)
+leisure1 = Page(2, "Hackers and Painters", art1sections[5], 1)
+speedCheck = Page(3, "SpeedCheck", art1sections[6], 1)
 #art1 = Page(2, "SAT Prep 1", open("template/satPrep1Content.html").read(), [])
 pages = { 0 : home,
           1 : page1,
@@ -30,7 +34,9 @@ pages = { 0 : home,
           3 : page3
         }
 excerptPages = {
-          1 : art1
+          1 : art1,
+          2 : leisure1,
+          3 : speedCheck
 }
 transitionDictionary = {
     1 : 2,
