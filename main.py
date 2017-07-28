@@ -57,6 +57,7 @@ class ExHandler(webapp2.RequestHandler):
     def get(self):
         page = excerptPages[int(self.request.get('id'))]
         page.sectionID = 1
+        page.content = art1sections[page.sectionID]
         self.response.out.write(constructPage(page))
         #curr = 1
 

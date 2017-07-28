@@ -12,6 +12,7 @@ class Page:
         }
         return dictionary
 
+
 art1sections = { 1 : open("template/satPrep1readingSection1.html").read(),
                  2 : open("template/satPrep1readingSection2.html").read(),
                  3 : open("template/satPrep1readingSection3.html").read(),
